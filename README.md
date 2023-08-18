@@ -13,3 +13,7 @@ after this cmd run in project automatically created controllers,middleware and b
 
 => here add css and js cdn links of bootstrap in views/layouts/app.blade.php file <br>
 in public folder create file and copy paste bootstrap 5 cdn links content and that link add in views/layouts/app.blade.php file
+
+
+=> task-6(crud datatable)
+create resource controller,model,route and blade files for crud operation. here also use laravel blade file's yield,extends attribute.
