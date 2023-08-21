@@ -17,3 +17,9 @@ in public folder create file and copy paste bootstrap 5 cdn links content and th
 
 => task-6(crud datatable)
 create resource controller,model,route and blade files for crud operation. here also use laravel blade file's yield,extends attribute.
+
+
+=> task-5(Use Seed and Generate testing data )
+first create factory and write code after update databaseseeder and run cmd php artisan db:seed
+here we can use also tinker for that write in command prompt -> php artisan tinker
+->User::factory()->count(20)->create()
