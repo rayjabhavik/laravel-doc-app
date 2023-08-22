@@ -26,3 +26,7 @@ here we can use also tinker for that write in command prompt -> php artisan tink
 
 => task-6(validation in add/edit)
 add validation logic in controller and for showing error message code in blade file
+
+=> task-10(getter/setter)
+first create funcions in model according to column name after that use that function in controller for get full name(combine two column value and show)
+here i also set mr before first_name if already exist then not add and get first capital letter value of forst_name 
