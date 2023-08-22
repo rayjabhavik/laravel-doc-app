@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GetterSetterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('users', UserController::class);
+Route::get('getname', [GetterSetterController::class, 'getterName'])->name('getname');
+Route::get('setname', [GetterSetterController::class, 'setName'])->name('setname');
+Route::get('fullname', [GetterSetterController::class, 'fullName'])->name('fullname');
+
+
+
