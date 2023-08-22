@@ -3,17 +3,31 @@
     Edit Detail
 @endsection
 @section('section')
+    @if ($message = Session::get('success'))
+        <span>
+            <strong>{{ $message }}</strong>
+        </span>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('users.update', $data->id) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="mb-3">
             <label class="form-label">firstName</label>
-            <input type="text" name="first" value="{{ $data['first_name'] }}" class="form-control">
+            <input type="text" name="first_name" value="{{ $data['first_name'] }}" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">lastName</label>
-            <input type="text" name="last" value="{{ $data['last_name'] }}" class="form-control">
+            <input type="text" name="last_name" value="{{ $data['last_name'] }}" class="form-control">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -27,5 +41,3 @@
         </div>
     </form>
 @endsection
-
-

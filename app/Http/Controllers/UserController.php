@@ -43,11 +43,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $datavalid = $request->validate([
+            //  validating the name field.  
+            'first_name' => 'required',
+            'last_name' => 'required|alpha',
+            'email' => 'required|email'
+        ]);
+        // dd("hello");
 
 
         $product = new Product();
-        $product->first_name = $request->first;
-        $product->last_name = $request->last;
+        $product->first_name = $request->first_name;
+        $product->last_name = $request->last_name;
         $product->email = $request->email;
         $product->save();
         return redirect()->route('users.index')->with('success', 'User created successfully!');
@@ -89,10 +96,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $datavalid = $request->validate([
+            //  validating the name field.  
+            'first_name' => 'required',
+            'last_name' => 'required|alpha',
+            'email' => 'required|email|ends_with:@gmail.com'
+        ]);
 
         $product = Product::find($id);
-        $product->first_name = $request->first;
-        $product->last_name = $request->last;
+        $product->first_name = $request->first_name;
+        $product->last_name = $request->last_name;
         $product->email = $request->email;
         $product->save();
 
