@@ -23,3 +23,6 @@ create resource controller,model,route and blade files for crud operation. here 
 first create factory and write code after update databaseseeder and run cmd php artisan db:seed
 here we can use also tinker for that write in command prompt -> php artisan tinker
 ->User::factory()->count(20)->create()
+
+=> task-6(validation in add/edit)
+add validation logic in controller and for showing error message code in blade file
