@@ -2,12 +2,15 @@
 
 namespace App\Providers;
 
+use App\Models\Phone;
 use App\Models\Student;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Observers\StudentObserver;
+use App\Observers\PhoneObserver;
+
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -31,5 +34,7 @@ class EventServiceProvider extends ServiceProvider
     {
         //
         Student::observe(StudentObserver::class);
+        Phone::observe(PhoneObserver::class);
+
     }
 }
