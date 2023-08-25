@@ -35,3 +35,16 @@ here i also set mr before first_name if already exist then not add and get first
 composer require yajra/laravel-datatables:"^1.0" --ignore-platform-req=ext-gd -w first run command
 add in config/app.php in the providers add  Yajra\DataTables\DataTablesServiceProvider::class
 pass data and button using cointroller
+
+=> task-8(send mail using Observable & Mailable )
+Observable:
+to create Observable with this command a php artisan make:observer ProductObserver --model=Product
+regester a observal in EventServiceProvider.php in providers boot method
+mail changes in .env file  
+
+ Mailable:
+ to create Mailable with the use of this commmand a php artisan make:mail MyTestMail
+ and also create a blade.php file for mail
+ use mailable in Observable
+ in the mail:send() we can also use a mail:queue()
+
