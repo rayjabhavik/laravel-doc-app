@@ -48,3 +48,5 @@ mail changes in .env file
  use mailable in Observable
  in the mail:send() we can also use a mail:queue()
 
+=> task-11(carbon and models boot method )
+in model create a boot method for inserting expiry date using carbon
