@@ -30,3 +30,8 @@ add validation logic in controller and for showing error message code in blade f
 => task-10(getter/setter)
 first create funcions in model according to column name after that use that function in controller for get full name(combine two column value and show)
 here i also set mr before first_name if already exist then not add and get first capital letter value of forst_name 
+
+=> task-7(yajratable)
+composer require yajra/laravel-datatables:"^1.0" --ignore-platform-req=ext-gd -w first run command
+add in config/app.php in the providers add  Yajra\DataTables\DataTablesServiceProvider::class
+pass data and button using cointroller
