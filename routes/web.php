@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GetterSetterController;
 use App\Http\Controllers\YajraController;
+use App\Http\Controllers\SubscriptionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,11 @@ Route::get('update/{id}', [YajraController::class,'update'])->name('update');
 Route::PUT('edit/{id}', [YajraController::class,'edit'])->name('edit');
 
 Route::get('delete/{id}', [YajraController::class,'delete'])->name('delete');
+
+Route::post('subform', [SubscriptionController::class,'index'])->name('subform');
+
+Route::view('subcreate', "subscription.create")->name('subcreate');
+
 
 
 
