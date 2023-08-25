@@ -50,3 +50,6 @@ mail changes in .env file
 
 => task-11(carbon and models boot method )
 in model create a boot method for inserting expiry date using carbon
+
+=> task12(randome number generate using observer)
+in observer creating method for inserting 6 digit randome number and in factory add another column then update dbseeder and run command php artisan db:seed 
