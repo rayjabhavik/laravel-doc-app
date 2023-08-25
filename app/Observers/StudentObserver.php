@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Mail\StudentMail;
 use App\Models\Student;
 use Illuminate\Support\Facades\Mail;
 
@@ -38,13 +39,20 @@ class StudentObserver
     public function deleting(Student $student)
     {
         //
+        // $email = $student->email;
+        // $name = $student->name;
+        // $data = array('name' => $name);
+        // Mail::send(['html' => 'mail'], $data, function ($message) use ($email, $name) {
+        //     $message->to($email, $name)->subject('laravel mail tutorial');
+        //     $message->from('bhavikgrayja72650@gmail.com');
+        // });
+
         $email = $student->email;
         $name = $student->name;
-        $data = array('name' => $name);
-        Mail::send(['html' => 'mail'], $data, function ($message) use ($email, $name) {
-            $message->to($email, $name)->subject('laravel mail tutorial');
-            $message->from('bhavikgrayja72650@gmail.com');
-        });
+        $mailable = new StudentMail($name, $email);
+        // Mail::send($mailable);
+        Mail::queue($mailable);
+
     }
 
     /**
