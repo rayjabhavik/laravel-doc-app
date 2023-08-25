@@ -17,7 +17,7 @@ class Product extends Model
     function getFirstNameAttribute($value)
     {
         // for field first_name function name getFirstNameAttribute
-        return ucFirst($value);
+        return lcFirst($value);
     }
 
     function setFirstNameAttribute($value)

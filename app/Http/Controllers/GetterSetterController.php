@@ -28,7 +28,7 @@ class GetterSetterController extends Controller
     function fullName()
     {
 
-        $data = Product::find(77);
+        $data = Product::find(54);
         // dd($data);
         dd($data->full_name);
 
